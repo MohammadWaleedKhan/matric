@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="../Shehzad-logo.png" />
+	<title>Matrix</title>
+</head>
+
+<body>
+	<h1>Matrix</h1>
+
+	<button onclick="printMatrix()">Print</button><br><br>
+	<div>
+		<table id="input-1">
+			<tr>
+				<td id="td-1"></td>
+				<td id="td-2"></td>
+				<td id="td-3"></td>
+			</tr>
+			<tr>
+				<td id="td-4"></td>
+				<td id="td-5"></td>
+				<td id="td-6"></td>
+			</tr>
+			<tr>
+				<td id="td-7"></td>
+				<td id="td-8"></td>
+				<td id="td-9"></td>
+			</tr>
+		</table>
+		<table id="input-2">
+			<tr>
+				<td id="td-10"></td>
+				<td id="td-11"></td>
+				<td id="td-12"></td>
+			</tr>
+			<tr>
+				<td id="td-13"></td>
+				<td id="td-14"></td>
+				<td id="td-15"></td>
+			</tr>
+			<tr>
+				<td id="td-16"></td>
+				<td id="td-17"></td>
+				<td id="td-18"></td>
+			</tr>
+		</table>
+	</div>
+	<table id="matrix-result">
+		<tr>
+			<td id="td-19"></td>
+			<td id="td-20"></td>
+			<td id="td-21"></td>
+		</tr>
+		<tr>
+			<td id="td-22"></td>
+			<td id="td-23"></td>
+			<td id="td-24"></td>
+		</tr>
+		<tr>
+			<td id="td-25"></td>
+			<td id="td-26"></td>
+			<td id="td-27"></td>
+		</tr>
+	</table>
+
+
+	<script>
+		function printMatrix() {
+			let matrixArrOne = [[0, 0, 0], 
+                                [0, 0, 0], 
+                                [0, 0, 0]];
+
+			let matrixResult = [[0, 0, 0],
+                                [0, 0, 0],
+                                [0, 0, 0]];
+
+			for (let x = 0; x < 3; x++) {
+				for (let y = 0; y < 3; y++) {
+					matrixArrOne[x][y] = Number(prompt(`Enter a number row ${x+1} column ${y+1}`));
+				}
+			}
+
+            let matrixArrtTwo = [[0, 0, 0],
+                                 [0, 0, 0], 
+                                 [0, 0, 0]];
+
+			for (let x = 0; x < 3; x++) {
+				for (let y = 0; y < 3; y++) {
+					matrixArrTwo[x][y] = Number(prompt(`Enter a number row ${x+1} column ${y+1}`));
+					matrixResult[x][y] = matrixArrOne[x][y] + matrixArrTwo[x][y];
+				}
+			}
+
+			document.querySelector("#td-1").innerHTML = matrixArrOne[0][0];
+			document.querySelector("#td-2").innerHTML = matrixArrOne[0][1];
+			document.querySelector("#td-3").innerHTML = matrixArrOne[0][2];
+			document.querySelector("#td-4").innerHTML = matrixArrOne[1][0];
+			document.querySelector("#td-5").innerHTML = matrixArrOne[1][1];
+			document.querySelector("#td-6").innerHTML = matrixArrOne[1][2];
+			document.querySelector("#td-7").innerHTML = matrixArrOne[2][0];
+			document.querySelector("#td-8").innerHTML = matrixArrOne[2][1];
+			document.querySelector("#td-9").innerHTML = matrixArrOne[2][2];
+
+			document.querySelector("#td-10").innerHTML = matrixArrTwo[0][0];
+			document.querySelector("#td-11").innerHTML = matrixArrTwo[0][1];
+			document.querySelector("#td-12").innerHTML = matrixArrTwo[0][2];
+			document.querySelector("#td-13").innerHTML = matrixArrTwo[1][0];
+			document.querySelector("#td-14").innerHTML = matrixArrTwo[1][1];
+			document.querySelector("#td-15").innerHTML = matrixArrTwo[1][2];
+			document.querySelector("#td-16").innerHTML = matrixArrTwo[2][0];
+			document.querySelector("#td-17").innerHTML = matrixArrTwo[2][1];
+			document.querySelector("#td-18").innerHTML = matrixArrTwo[2][2];
+
+			document.querySelector("#td-19").innerHTML = matrixResult[0][0];
+			document.querySelector("#td-20").innerHTML = matrixResult[0][1];
+			document.querySelector("#td-21").innerHTML = matrixResult[0][2];
+			document.querySelector("#td-22").innerHTML = matrixResult[1][0];
+			document.querySelector("#td-23").innerHTML = matrixResult[1][1];
+			document.querySelector("#td-24").innerHTML = matrixResult[1][2];
+			document.querySelector("#td-25").innerHTML = matrixResult[2][0];
+			document.querySelector("#td-26").innerHTML = matrixResult[2][1];
+			document.querySelector("#td-27").innerHTML = matrixResult[2][2];
+		}
+	</script>
+</body>
+
+</html>
